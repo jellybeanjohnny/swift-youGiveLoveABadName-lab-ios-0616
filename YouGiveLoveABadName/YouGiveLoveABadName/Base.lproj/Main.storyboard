@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bonjovi" translatesAutoresizingMaskIntoConstraints="NO" id="2mK-Ph-zer">
+                                <rect key="frame" x="0.0" y="226.5" width="600" height="147"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEJ-XM-6d9">
                                 <rect key="frame" x="285" y="536" width="30" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
@@ -25,18 +29,27 @@
                                     <action selector="expandButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jRQ-aU-fBn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bonjovi" translatesAutoresizingMaskIntoConstraints="NO" id="2mK-Ph-zer">
-                                <rect key="frame" x="0.0" y="145" width="600" height="310"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2mK-Ph-zer" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="N20-tr-8Lx"/>
-                            <constraint firstItem="LEJ-XM-6d9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PGh-Wo-Sbh"/>
-                            <constraint firstItem="2mK-Ph-zer" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VN4-6m-ALd"/>
-                            <constraint firstItem="LEJ-XM-6d9" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-20" id="aSQ-Gu-O0M"/>
+                            <constraint firstItem="2mK-Ph-zer" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Pg8-lo-RIK"/>
+                            <constraint firstItem="2mK-Ph-zer" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="adh-dq-9vb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LEJ-XM-6d9" secondAttribute="bottom" constant="20" id="kaM-xT-bna"/>
+                            <constraint firstItem="2mK-Ph-zer" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lR6-nU-2kS"/>
+                            <constraint firstItem="2mK-Ph-zer" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" constant="-3" id="p0l-66-zDI" userLabel="Starting Heigh Constraint"/>
+                            <constraint firstItem="LEJ-XM-6d9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qfk-PE-6Z3"/>
+                            <constraint firstItem="2mK-Ph-zer" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="zCG-bq-aoV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Pg8-lo-RIK"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="equalHeightConstraint" destination="Pg8-lo-RIK" id="u1n-b8-OuF"/>
+                        <outlet property="smallHeightConstraint" destination="p0l-66-zDI" id="kWd-fL-FRY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
